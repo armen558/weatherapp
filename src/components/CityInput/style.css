@@ -3,11 +3,18 @@ section.input {
     border: none;
     margin: 20px auto;
     display: flex;
+    margin-top: 30vh;
+    transition: all 0.3s;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+section.input.top {
+    margin-top: 50px;
 }
 
 section.input input {
     background-color: rgba(255,255,255,0.4);
-    height: 40px;
+    height: 45px;
     color: #FFFFFF;
     border: none;
     width: 90%;
@@ -15,6 +22,7 @@ section.input input {
     font-size: 16px;
     outline: none;
     transition: all 0.3s;
+    border-radius: 3px 0 0 3px;
 }
 
 section.input input:focus {
@@ -30,8 +38,8 @@ section.input input:focus::placeholder {
 }
 
 section.input button {
-    width: 70px;
-    height: 40px;
+    height: 45px;
+    min-width: calc(10% + 1px);
     background-color: rebeccapurple;
     color: #FFFFFF;
     border: none;
@@ -40,7 +48,10 @@ section.input button {
     outline: none;
     cursor: pointer;
     transition: all 0.3s;
+    padding: 0 15px;
+    border-radius: 0 3px 3px 0;
 }
+
 section.input button:hover {
     background-color: rgb(69, 40, 99);
 }

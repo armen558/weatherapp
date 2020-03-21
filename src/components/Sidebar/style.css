@@ -1,0 +1,102 @@
+.sidebar {
+    position: fixed;
+    right: -500px;
+    top: 0;
+    width: 450px;
+    height: 100vh;
+    background-color: rgba(255,255,255, 0.9);
+    padding: 70px 0 0 0;
+    transition: all 0.5s;
+    z-index: 10;
+    box-shadow: -1px 0 15px rgba(0,0,0,0.4);
+    overflow: auto;
+    transition: all 0.3s;
+}
+.sidebar p {
+    margin: 0;
+}
+
+.sidebar.open {
+    right: 0;
+}
+
+.sidebar .closeBtn {
+    position: absolute;
+    left: 20px;
+    top: 10px;
+    font-size: 24px;
+    line-height: 1;
+    color: #333333;
+    cursor: pointer;
+}
+
+.sidebar .dayForecast, .sidebar .nightForecast {
+    padding: 20px 30px 30px 50px;
+    min-height: 30vh;
+}
+
+.sidebar .dayForecast {
+    background: url('../../assets/images/clear\ sky.jpg') center/cover no-repeat;
+}
+.sidebar .nightForecast {
+    background: url('../../assets/images/star\ sky.jpg') center/cover no-repeat;
+}
+.sidebar .dayForecast .imgBg, .sidebar .nightForecast .imgBg {
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.sidebar .dayForecast .imgBg img, 
+.sidebar .nightForecast .imgBg img {
+    width: 120px;
+    filter: drop-shadow(0 0 3px rgba(0,0,0,0.3));
+}
+
+.sidebar .date {
+    padding: 0 30px 0 50px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #333333;
+    line-height: 30px;
+    margin-bottom: 30px;
+    text-align: right;
+}
+
+.sidebar .info {
+    text-align: right;
+}
+
+.sidebar .info .temp {
+    font-size: 32px;
+    color: rebeccapurple;
+    font-weight: 600;
+    line-height: 25px;
+    margin: 30px 0;
+}
+
+.sidebar .info .precip,
+.sidebar .info .phrase,
+.sidebar .info .wind {
+    font-size: 22px;
+    line-height: 25px;
+    color: #333333;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.sidebar .info .wind {
+    margin-bottom: 0;
+    font-size: 18px;
+}
+
+.sidebar .info .phrase {
+    font-size: 20px;
+}
+
+.sidebar .nightForecast .info .precip,
+.sidebar .nightForecast .info .phrase,
+.sidebar .nightForecast .info .wind {
+    color: #FFFFFF;
+}

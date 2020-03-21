@@ -1,0 +1,67 @@
+.forecastSection {
+    margin: 50px 0
+}
+
+.forecasts {
+    /* display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-column-gap: 30px; */
+    max-width: 95%;
+    margin: auto;
+    position: relative;
+}
+
+.cityNameHeader {
+    text-align: center;
+    color: #FFFFFF;
+    margin: 20px 0 40px 0;
+    font-size: 30px;
+    font-weight: 500;
+    filter: drop-shadow(0 0px 8px #000000);
+}
+
+.forecasts .slick-slide {
+    padding: 0 12px;
+}
+
+.forecasts .slick-track {
+    margin: auto;
+}
+
+.arrow {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    border-right: 2px solid #FFFFFF;
+    border-top: 2px solid #FFFFFF;
+    right: -15px;
+    z-index: 8;
+}
+
+.arrow.prevArr {
+    transform: translateY(-50%) rotate(-135deg);
+    left: -15px;
+}
+
+.forecasts .slick-arrow::before {
+    content: none;
+}
+
+.forecasts .slick-arrow {
+    width: 25px;
+    height: 25px;
+    border-right: 2px solid #FFFFFF;
+    border-top: 2px solid #FFFFFF;
+    transform: translateY(-50%) rotate(45deg);
+    right: -15px;
+}
+.forecasts .slick-arrow.slick-prev {
+    transform: translateY(-50%) rotate(-135deg);
+    left: -15px;
+}
+.forecasts .slick-arrow.slick-disabled {
+    border-right: 2px solid rgba(255,255,255,0.5);
+    border-top: 2px solid rgba(255,255,255,0.5);
+}

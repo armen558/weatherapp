@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 
 import Footer from './components/Footer';
 import Header from './components/Header';
-import Weather from './containers/Weather';
+import FiveDayForecast from './containers/FiveDayForecast';
 
 class App extends Component {
     render() {
         return (
             <React.Fragment>
                 <Header />
-                <div className="maxWidth">
-                    <Weather/>
+                <div className="content">
+                    <FiveDayForecast/>
                 </div>
                 <Footer />
             </React.Fragment>

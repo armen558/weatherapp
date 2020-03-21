@@ -1,4 +1,7 @@
 export {
     fetchLocationKey,
-    fetchWeatherData
+    fetchWeatherData,
+    sidebarOpen,
+    sidebarClosed,
+    searchStarted
 } from './getWeather';

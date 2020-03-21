@@ -1,0 +1,74 @@
+.card {
+    background-color: rgba(255,255,255,0.6);
+    padding: 20px;
+    position: relative;
+    min-height: 270px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 3px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    transition: all 0.4s;
+    max-width: 250px;
+    margin: auto;
+}
+
+.card:hover {
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.card p {
+    margin: 0;
+}
+
+.card .image {
+    width: 80%;
+    margin: 0 auto 20px auto;
+    text-align: center;
+}
+.card .image img {
+    width: 100%;
+    filter: drop-shadow(0 0 3px rgba(0,0,0,0.5));
+    max-width: 120px;
+    margin: auto;
+}
+
+.card .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card .text > div {
+    margin-bottom: 15px;
+}
+
+.card .day, .card .month {
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    font-weight: 600;
+    color: #333333;
+}
+
+.card .month {
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: 500;
+}
+
+.card .temp {
+    font-size: 22px;
+    color: rebeccapurple;
+    font-weight: 600;
+    text-align: center;
+    line-height: 25px;
+    margin-top: 10px;
+}
+
+.card .divider {
+    width: 70%;
+    margin: auto;
+    border: none;
+    border-top: 1px solid rgba(54, 45, 63, 0.25);
+}

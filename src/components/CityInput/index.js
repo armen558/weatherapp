@@ -1,27 +1,19 @@
-import React, { useState } from 'react';
-
-import { getWeatherData } from '../../service/helperFunctions';
+import React from 'react';
 
 import './style.css';
 
-const CityInput = () => {
-
-    const [state, setState] = useState({input: ''});
-
-    const onChangeHandler = event => {
-        setState({input: event.target.value});
-    }
-
+const CityInput = props => {
     return (
-        <section className="input">
+        <section className={'input ' + (props.searchStarted ? 'top' : '')}>
             <input 
                 className="cityInput" 
                 type="text" 
                 name="city" 
-                onChange={onChangeHandler} value={state.input}
+                onChange={props.changed} 
+                value={props.value}
                 placeholder='City name'    
             />
-            <button onClick={() => getWeatherData(state.input)}>Go!</button>
+            <button onClick={props.submit}>Search!</button>
         </section>
     )
 }
