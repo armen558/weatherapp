@@ -1,0 +1,77 @@
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: #FFFFFF;
+    background-color: rgba(0,0,0,0.5);
+    padding: 10px 20px; 
+}
+body.light header {
+    background-color: rgba(255,255,255,0.7);
+    color: #444444;
+}
+header  p {
+    margin: 0;
+}
+
+.headerText {
+    color: rgba(255,255,255,0.5);
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 400;
+    text-align: center;
+    padding: 0 20px;
+    margin: 15px 0 0 0;
+}
+body.light .headerText {
+    color: rgba(68, 68, 68, 0.7);
+}
+
+header .container {
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .container .leftCol {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+header .container .leftCol p {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 26px;
+    padding-left: 20px;
+    width: 50px;
+    letter-spacing: 0.7px;
+}
+
+.logo {
+    width: 70px;
+    margin-right: 10px;
+}
+
+header p:first-line {
+    text-indent: -20px;
+}
+
+@media screen and (max-width: 767px) {
+    header .container .leftCol p {
+        font-size: 14px;
+        line-height: 18px;
+        padding-left: 15px;
+    }
+    .logo {
+        width: 45px;
+    }
+    .headerText {
+        font-size: 15px;
+    }
+}

@@ -1,0 +1,71 @@
+.list {
+    margin: 50px auto;
+    max-width: 80%;
+}
+
+.list ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+}
+
+.cityNameHeader {
+    text-align: center;
+    color: #FFFFFF;
+    margin: 60px 0 25px 0;
+    font-size: 30px;
+    font-weight: 500;
+    filter: drop-shadow(0 0px 8px #000000);
+}
+.cityNameHeader span {
+    position: absolute;
+    font-size: 10px;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+}
+
+
+@media screen and (max-width: 1150px) {
+    .list ul {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .list {
+        max-width: 100%;
+    }
+
+}
+
+
+@media screen and (max-width: 767px) {
+    .list ul {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr ;
+    }
+    .list ul {
+        grid-column-gap: 7px;
+        grid-row-gap: 7px;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .list ul {
+        grid-template-columns: 1fr 1fr 1fr 1fr ;
+    }
+}
+@media screen and (max-width: 400px) {
+    .list ul {
+        grid-template-columns: 1fr 1fr 1fr ;
+    }
+}
+@media screen and (max-width: 320px) {
+    .list ul {
+        grid-template-columns: 1fr 1fr;
+    }
+}

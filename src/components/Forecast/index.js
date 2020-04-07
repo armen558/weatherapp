@@ -5,20 +5,6 @@ import Card from '../Card';
 
 import './style.css';
 
-
-const SampleNextArrow = () => {
-    return (
-        <span className="nextArr arrow slick-arrow"></span>
-    )
-}
-
-
-const SamplePrevArrow = props => {
-    return (
-        <span className="prevArr arrow slick-arrow"></span>
-    )
-}
-
 const Forecast = props => {
     let cards = props.dailyData.map((el, index) => {
         let data = {
@@ -46,23 +32,27 @@ const Forecast = props => {
         speed: 500,
         slidesToShow: 5,
         slidesToScroll: 1,
-        // nextArrow: <SampleNextArrow />,
-        // prevArrow: <SamplePrevArrow />,
         responsive: [
             {
-              breakpoint: 1200,
+              breakpoint: 1000,
+              settings: {
+                slidesToShow: 4,
+              }
+            },
+            {
+              breakpoint: 840,
               settings: {
                 slidesToShow: 3,
               }
             },
             {
-              breakpoint: 820,
-              settings: {
-                slidesToShow: 2,
-              }
+                breakpoint: 550,
+                settings: {
+                  slidesToShow: 2,
+                }
             },
             {
-                breakpoint: 500,
+                breakpoint: 385,
                 settings: {
                   slidesToShow: 1,
                 }
@@ -73,8 +63,9 @@ const Forecast = props => {
     return (
         <section className="forecastSection">
             {props.city.cityName 
-                ? <h2 className="cityNameHeader">{props.city.cityName}, {props.city.country}</h2> 
-                : null}   
+                ? <h2 className="cityNameHeader">{props.city.cityName}, {props.city.countryCode}<span>{props.city.countryFullName}</span></h2>
+                : null
+            }
             <div className="forecasts">
                 <Slider {...sliderSettings}>
                     {cards}

@@ -11,19 +11,29 @@
     position: relative;
 }
 
-.cityNameHeader {
+.forecastSection .cityNameHeader {
     text-align: center;
     color: #FFFFFF;
-    margin: 20px 0 40px 0;
+    margin: 20px 0;
     font-size: 30px;
     font-weight: 500;
     filter: drop-shadow(0 0px 8px #000000);
 }
-
-.forecasts .slick-slide {
-    padding: 0 12px;
+.cityNameHeader span {
+    position: absolute;
+    font-size: 10px;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
+.forecasts .slick-slide {
+    padding: 20px 12px;
+}
+.forecasts .slick-list {
+    width: 95%;
+    margin: auto;
+}
 .forecasts .slick-track {
     margin: auto;
 }
@@ -64,4 +74,14 @@
 .forecasts .slick-arrow.slick-disabled {
     border-right: 2px solid rgba(255,255,255,0.5);
     border-top: 2px solid rgba(255,255,255,0.5);
+}
+
+@media screen and (max-width: 767px) {
+    .forecasts .slick-arrow {
+        width: 15px;
+        height: 15px;
+    }
+    .forecasts .slick-list {
+        width: 98%;
+    }
 }

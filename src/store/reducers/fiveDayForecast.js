@@ -1,14 +1,17 @@
 import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
-    locationKey: '',
-    dailyForecasts: [],
-    error: '',
     cityInfo: {
         cityName: '',
-        country: ''
+        countryCode: '',
+        countryFullName: ''
     },
+    dailyForecasts: [],
+    dataLoaded: false,
+    error: '',
     isSideBarOpen: false,
+    locationKey: '',
+    loading: false,
     sidebarData: {
         Day: {
             Wind: {
@@ -25,18 +28,10 @@ const initialState = {
             Maximum: ''
         }
     },
-    loading: false,
-    searchClicked: false,
-    dataLoaded: false
 };
 
 const reducer = (state = initialState, action) => {
     switch(action.type) {
-        case actionTypes.SEARCH_STARTED:
-            return {
-                ...state, 
-                searchClicked: true
-            }
         case actionTypes.FETCH_LOCATION_KEY_START:
                 return {
                     ...state,
@@ -48,14 +43,23 @@ const reducer = (state = initialState, action) => {
                 locationKey: action.payload.Key,
                 cityInfo: {
                     cityName: action.payload.EnglishName,
-                    country: action.payload.Country.ID
-                }
+                    countryCode: action.payload.Country.ID,
+                    countryFullName: action.payload.Country.EnglishName
+                },
+                error: ''
             };
         case actionTypes.FETCH_LOCATION_KEY_FAIL:
-            console.log(action.payload);
             return {
                 ...state,
-                error: action.payload
+                cityInfo: {
+                    cityName: '',
+                    countryCode: '',
+                    countryFullName: ''
+                },
+                error: action.payload,
+                dailyForecasts: [],
+                loading: false,
+                locationKey: ''
             }
         case actionTypes.FETCH_WEATHER_DATA_START:
             return {
@@ -69,12 +73,14 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 dailyForecasts: action.payload.DailyForecasts,
                 loading: false,
-                dataLoaded: true
+                dataLoaded: true,
+                error: ''
             };
         case actionTypes.FETCH_WEATHER_DATA_FAIL:
             console.log(action.payload);
             return {
                 ...state,
+                dailyForecasts: [],
                 error: action.payload,
                 loading: false
             }

@@ -1,21 +1,18 @@
 .card {
-    background-color: rgba(255,255,255,0.6);
-    padding: 20px;
+    background-color: rgba(90, 136, 199, 0.9);
+    padding: 20px 15px;
     position: relative;
-    min-height: 270px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     border-radius: 3px;
     cursor: pointer;
-    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    box-shadow: 0 0 15px -5px rgba(0,0,0,0.3);
     transition: all 0.4s;
-    max-width: 250px;
+    max-width: 200px;
     margin: auto;
 }
-
 .card:hover {
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    transform: scale(0.97);
 }
 
 .card p {
@@ -24,12 +21,12 @@
 
 .card .image {
     width: 80%;
-    margin: 0 auto 20px auto;
+    margin: 0 auto;
     text-align: center;
 }
 .card .image img {
     width: 100%;
-    filter: drop-shadow(0 0 3px rgba(0,0,0,0.5));
+    /* filter: drop-shadow(0 0 3px rgba(0,0,0,0.5)); */
     max-width: 120px;
     margin: auto;
 }
@@ -47,28 +44,53 @@
     font-size: 20px;
     line-height: 30px;
     text-align: center;
-    font-weight: 600;
-    color: #333333;
+    font-weight: 500;
+    color: #FFFFFF;
 }
 
 .card .month {
-    font-size: 18px;
+    font-size: 17px;
     line-height: 25px;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .card .temp {
     font-size: 22px;
-    color: rebeccapurple;
+    color: #FFFFFF;
     font-weight: 600;
     text-align: center;
     line-height: 25px;
     margin-top: 10px;
+    letter-spacing: 0.5px;
 }
 
 .card .divider {
-    width: 70%;
-    margin: auto;
+    width: 80%;
+    margin: 20px auto;
     border: none;
-    border-top: 1px solid rgba(54, 45, 63, 0.25);
+    border-top: 1px solid rgba(255,255,255, 0.25);
+}
+
+
+@media screen and (max-width: 767px) {
+    .card .image img {
+        width: 70px;
+    }
+
+    .card .day {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .card .month {
+        font-size: 12px;
+        line-height: 20px;
+    }
+    .card .divider {
+        margin: 15px auto;
+    }
+    .card .temp {
+        font-size: 16px;
+        line-height: 22px;
+        margin-top: 5px;
+    }
 }

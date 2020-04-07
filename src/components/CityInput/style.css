@@ -1,46 +1,74 @@
-section.input {
+.input {
     width: 80%;
     border: none;
-    margin: 20px auto;
-    display: flex;
-    margin-top: 30vh;
+    margin: 40px auto 20px auto;
     transition: all 0.3s;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    box-shadow: 0 0 10px -2px rgba(0,0,0,0.3);
 }
 
-section.input.top {
-    margin-top: 50px;
+.input form {
+    display: flex;
 }
 
-section.input input {
+.input form .autocompleteInputWrap {
+    width: 93%;
+}
+.input form .autocompleteInputWrap * {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+.input form .autocompleteInput {
+    padding: 0;
+    padding-right: 0;
+    border: none;
+}
+.input form .autocompleteInput:before {
+    content: none;
+}
+.input form .autocompleteInput:after {
+    content: none;
+}
+
+.input form .autocompleteInput input {
     background-color: rgba(255,255,255,0.4);
     height: 45px;
     color: #FFFFFF;
     border: none;
-    width: 90%;
-    padding: 0 15px;
+    padding: 0 15px !important;
     font-size: 16px;
     outline: none;
     transition: all 0.3s;
     border-radius: 3px 0 0 3px;
+    letter-spacing: 0.5px;
+}
+body.light .input form .autocompleteInput input {
+    background-color: rgba(255,255,255,0.7);
 }
 
-section.input input:focus {
+.input form .autocompleteInput input:focus {
+    background-color: #FFFFFF;
+    color: #444444;
+}
+body.light .input form .autocompleteInput input:focus {
     background-color: #FFFFFF;
     color: #444444;
 }
 
-section.input input::placeholder {
-    color: rgba(255,255,255,0.7);
+.input form .autocompleteInput input::placeholder {
+    color: rgba(255,255,255);
+    opacity: 0.7;
+    font-family: 'Montserrat', sans-serif;
 }
-section.input input:focus::placeholder {
+.input form .autocompleteInput input:focus::placeholder {
     color: gray;
 }
-
-section.input button {
+body.light .autocompleteInput input::placeholder {
+    color: gray;
+}
+.input .submitBtn {
     height: 45px;
-    min-width: calc(10% + 1px);
-    background-color: rebeccapurple;
+    min-width: calc(7% + 1px);
+    background-color: rgb(102, 51, 153);
     color: #FFFFFF;
     border: none;
     font-size: 18px;
@@ -50,8 +78,43 @@ section.input button {
     transition: all 0.3s;
     padding: 0 15px;
     border-radius: 0 3px 3px 0;
+    display: flex;
+    justify-content: center;
 }
 
-section.input button:hover {
+.input .submitBtn:hover {
     background-color: rgb(69, 40, 99);
+}
+
+.input .clearBtn {
+    right: 5px;
+}
+
+.popper ul {
+    padding: 5px 0;
+}
+.popper ul::before {
+    content: "Top searched";
+    padding: 0 15px;
+    font-size: 12px;
+    line-height: 1.05;
+    color: #663399;
+    font-weight: 700;
+}
+.popper > div  {
+    border-radius: 3px;
+}
+.popper ul li {
+    padding: 10px 15px;
+    font-size: 15px;
+    line-height: 1.05;
+}
+.popper ul li[data-focus="true"] {
+    background-color: rgba(102, 51, 153, 0.1);
+}
+
+@media screen and (max-width: 767px) {
+    .input {
+        margin-top: 25px;
+    }
 }

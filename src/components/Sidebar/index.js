@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { months, weekDays } from '../../service/helperFunctions';
+import { months, weekDays } from '../../service/helpers';
 
 import './style.css';
 

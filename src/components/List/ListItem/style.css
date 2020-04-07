@@ -1,0 +1,86 @@
+.listItem {
+    background-color: rgba(255,255,255,0.5);
+    padding: 10px 10px 15px 10px;
+    position: relative;
+    box-shadow: 0 0 10px 1px rgba(0,0,0,0.5);
+    border-radius: 3px;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    max-width: 175px;
+    justify-self: center;
+}
+.listItem p {
+    margin: 0;
+}
+
+.listItem.day {
+    background: linear-gradient(180deg, rgb(54, 154, 221) 15%, rgb(115, 186, 225) 100%);
+}
+.listItem.night {
+    background: linear-gradient(180deg, rgba(18,34,89,1) 15%, rgba(150,97,162,1) 100%);
+}
+
+.listItem img {
+    width: 90px;
+    filter: drop-shadow(0 0 3px rgba(0,0,0,0.5));
+}
+.listItem p {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+    color: #FFFFFF;
+}
+
+.listItem .date, .listItem .phrase {
+    color: #FFFFFF;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+.listItem .phrase {
+    line-height: 20px;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.listItem .temp {
+    color: FFFFFF;
+    font-size: 22px;
+    line-height: 26px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+
+.listItem .divider {
+    width: 80%;
+    margin: 10px auto 15px auto;
+    border: none;
+    border-top: 1px solid rgba(255,255,255, 0.2);
+}
+
+@media screen and (max-width: 767px) {
+    .listItem .date {
+        font-size: 12px;
+        line-height: 16px;
+    }
+    .listItem .phrase {
+        display: none;
+    }
+    .listItem .temp {
+        margin-bottom: 0;
+        font-size: 14px;
+        line-height: 16px;
+    }
+    .listItem img {
+        width: 55px;
+    }
+    .listItem .divider {
+        margin: 5px auto 10px auto;
+    }
+}

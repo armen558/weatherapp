@@ -1,26 +1,20 @@
 import * as actionTypes from './actionTypes';
-import { getWeatherData, getLocationKey } from '../../service/helperFunctions';
+import { getWeatherData, getLocationKey } from '../../service/helpers';
 
-export const searchStarted = () => {
-    return {
-        type: actionTypes.SEARCH_STARTED
-    };
-};
-
-export const fetchLocationKeyStart = () => {
+const fetchLocationKeyStart = () => {
     return {
         type: actionTypes.FETCH_LOCATION_KEY_START
     };
 };
 
-export const fetchLocationKeySuccess = (data) => {
+const fetchLocationKeySuccess = (data) => {
     return {
         type: actionTypes.FETCH_LOCATION_KEY_SUCCESS,
         payload: data
     };
 };
 
-export const fetchLocationKeyFail = (err) => {
+const fetchLocationKeyFail = (err) => {
     return {
         type: actionTypes.FETCH_LOCATION_KEY_FAIL,
         payload: err
@@ -29,32 +23,31 @@ export const fetchLocationKeyFail = (err) => {
 
 export const fetchLocationKey = (city) => {
     return dispatch => {
-        dispatch(searchStarted());
         dispatch(fetchLocationKeyStart());
         getLocationKey(city)
             .then(resp => {
                 resp.data.length !== 0 
                     ? dispatch(fetchLocationKeySuccess(resp.data[0])) 
-                    : console.log('No such city found')
+                    : dispatch(fetchLocationKeyFail('No such city found'))
             })
             .catch(err => dispatch(fetchLocationKeyFail(err)))
     }
 };
 
-export const fetchWeatherDataStart = () => {
+const fetchWeatherDataStart = () => {
     return {
         type: actionTypes.FETCH_WEATHER_DATA_START,
     };
 };
 
-export const fetchWeatherDataSuccess = (data) => {
+const fetchWeatherDataSuccess = (data) => {
     return {
         type: actionTypes.FETCH_WEATHER_DATA_SUCCESS,
         payload: data
     };
 };
 
-export const fetchWeatherDataFail = (err) => {
+const fetchWeatherDataFail = (err) => {
     return {
         type: actionTypes.FETCH_WEATHER_DATA_FAIL,
         payload: err
@@ -66,7 +59,7 @@ export const fetchWeatherData = (key) => {
         dispatch(fetchWeatherDataStart());
         getWeatherData(key)
             .then(resp => dispatch(fetchWeatherDataSuccess(resp.data)))
-            .catch(err => dispatch(fetchWeatherDataFail(err)))
+            .catch(err => dispatch(fetchWeatherDataFail(err.message)))
     };
 };
 

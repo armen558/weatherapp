@@ -1,0 +1,27 @@
+.mobileMenu {
+    position: fixed;
+    top: 75px;
+    right: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+    padding: 20px 30px 20px 30px;
+    background-color: rgb(29, 19, 32);
+    display: none;
+    z-index: 15;
+    transition: all 0.3s;
+    box-shadow: -2px 3px 10px rgba(0,0,0,0.5);
+}
+
+.mobileMenu.open {
+    transform: scaleY(1);
+}
+
+@media screen and (max-width: 767px) {
+    .mobileMenu {
+        display: block;
+        background-color: rgba(0,0,0,0.9);
+    }
+    body.light .mobileMenu {
+        background-color: rgba(255,255,255,0.9);
+    }
+}

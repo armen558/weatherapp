@@ -10,7 +10,14 @@ footer {
     padding: 5px 20px;
     font-size: 16px;
 }
+body.light footer {
+    background-color: rgba(255,255,255,0.7);
+    color: #444444;
+}
 
 footer a {
     color: #FFFFFF;
+}
+body.light footer a {
+    color: #444444;
 }

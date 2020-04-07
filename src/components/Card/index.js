@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { months, weekDays } from '../../service/helperFunctions';
+import { months, weekDays } from '../../service/helpers';
 
 import './style.css';
 
@@ -29,7 +29,7 @@ const Card = props => {
             <div className="text">
                 {formattedDate}
                 <p className="temp">
-                    {props.data.temp.Maximum.Value + '°' + props.data.temp.Maximum.Unit} / {props.data.temp.Minimum.Value  + '°' + props.data.temp.Minimum.Unit}
+                    {Math.round(props.data.temp.Maximum.Value) + '°' + props.data.temp.Maximum.Unit} / {Math.round(props.data.temp.Minimum.Value)  + '°' + props.data.temp.Minimum.Unit}
                 </p>
             </div>
         </div>

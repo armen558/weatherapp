@@ -3,5 +3,8 @@ export {
     fetchWeatherData,
     sidebarOpen,
     sidebarClosed,
-    searchStarted
-} from './getWeather';
+} from './fiveDayForecast';
+
+export {
+    fetchWeatherHourlyData
+} from './hourlyForecast';
