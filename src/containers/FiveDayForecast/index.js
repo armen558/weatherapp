@@ -75,7 +75,6 @@ const FiveDayForecast = props => {
             {forecasts}
             {props.error ? <p className="error">{props.error}</p> : null}
             {sidebar}
-            <Backdrop open={props.isSideBarOpen} sidebarClosed={sidebarClosedHandler}/>
         </div>
     )    
 };

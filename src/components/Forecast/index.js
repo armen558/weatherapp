@@ -34,7 +34,7 @@ const Forecast = props => {
         slidesToScroll: 1,
         responsive: [
             {
-              breakpoint: 1000,
+              breakpoint: 1050,
               settings: {
                 slidesToShow: 4,
               }

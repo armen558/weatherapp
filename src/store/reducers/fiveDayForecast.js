@@ -23,7 +23,11 @@ const initialState = {
                 Speed: ''
             }
         },
-        Temperature: {
+        // Temperature: {
+        //     Minimum: '',
+        //     Maximum: ''
+        // },
+        RealFeelTemperature: {
             Minimum: '',
             Maximum: ''
         }

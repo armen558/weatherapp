@@ -1,36 +1,63 @@
 import React from 'react';
-
-import { months, weekDays } from '../../service/helpers';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 import './style.css';
 
 const Sidebar = props => {
-    let date = new Date(props.data.Date);
-    let formattedDate = weekDays[date.getDay()] + ', ' + date.getDate() + ' ' + months[date.getMonth()];
+    // let date = new Date(props.data.Date);
+    // let formattedDate = weekDays[date.getDay()] + ', ' + date.getDate() + ' ' + months[date.getMonth()];
     return (
         <div className={'sidebar ' + (props.open ? 'open' : '')}>
-            <span className="closeBtn" onClick={props.sidebarClosed}>→</span>    
-            <p className="date">{formattedDate}</p>
-            <div className="dayForecast">
-                <div className="imgBg">
-                    <img src={'/images/icons/' + (props.data.Day ? props.data.Day.Icon : '') + '.png'} alt=""/>
+            {/* <div>
+                <p className="date">{formattedDate}</p>
+            </div> */}
+            <span className="closeBtn" onClick={props.sidebarClosed}><ArrowBackIcon fontSize="small"/></span>    
+            <div className='flex'>
+                <div className="dayForecast">
+                    <p className="phrase">{props.data.Day.LongPhrase}</p>
+                    <div className="flex info">
+                        
+                        <div>
+                            <p className="label">Feels like</p>
+                            <p className="temp">{Math.round(props.data.RealFeelTemperature.Maximum.Value) + '°' + props.data.RealFeelTemperature.Maximum.Unit}</p>
+                        </div>
+
+                        <div>
+                            <p className="label">Precipitation</p>
+                            <p className="precip">{props.data.Day.HasPrecipitation ? props.data.Day.PrecipitationType : 'No precipitation'} </p>
+                        </div>
+
+                        <div>
+                            <p className="label">Wind</p>
+                            <p className="wind">{props.data.Day.Wind.Speed.Value + ' ' + props.data.Day.Wind.Speed.Unit}</p>
+                        </div>
+
+                        <div className="imgBg">
+                            <img src={'/images/icons/' + (props.data.Day ? props.data.Day.Icon : '') + '.png'} alt=""/>
+                        </div>
+                    </div>
                 </div>
-                <div className="info">
-                    <p className="temp">{props.data.Temperature.Maximum.Value + '°' + props.data.Temperature.Maximum.Unit}</p>
-                    <p className="precip">{props.data.Day.HasPrecipitation ? props.data.Day.PrecipitationType : 'No precipitation'} </p>
-                    <p className="phrase">{props.data.Day.ShortPhrase}</p>
-                    <p className="wind">Wind: {props.data.Day.Wind.Speed.Value + ' ' + props.data.Day.Wind.Speed.Unit}</p>
-                </div>
-            </div>
-            <div className="nightForecast">
-                <div className="imgBg">
-                    <img src={'/images/icons/' + (props.data.Day ? props.data.Night.Icon : '') + '.png'} alt=""/>
-                </div>
-                <div className="info">
-                    <p className="temp">{props.data.Temperature.Minimum.Value + '°' + props.data.Temperature.Minimum.Unit}</p>
-                    <p className="precip">{props.data.Night.HasPrecipitation ? props.data.Night.PrecipitationType : 'No precipitation' }</p>
-                    <p className="phrase">{props.data.Night.ShortPhrase}</p>
-                    <p className="wind">Wind: {props.data.Night.Wind.Speed.Value + ' ' + props.data.Night.Wind.Speed.Unit}</p>
+                <div className="nightForecast">
+                    <p className="phrase">{props.data.Night.LongPhrase}</p>
+                    <div className="flex info">
+                        <div className="imgBg">
+                            <img src={'/images/icons/' + (props.data.Day ? props.data.Night.Icon : '') + '.png'} alt=""/>
+                        </div>
+
+                        <div>
+                            <p className="label">Wind</p>
+                            <p className="wind">{props.data.Night.Wind.Speed.Value + ' ' + props.data.Night.Wind.Speed.Unit}</p>
+                        </div>
+                        <div>
+                            <p className="label">Precipitation</p>
+                            <p className="precip">{props.data.Night.HasPrecipitation ? props.data.Night.PrecipitationType : 'No precipitation' }</p>
+                        </div>
+
+                        <div>
+                            <p className="label">Feels like</p>
+                            <p className="temp">{Math.round(props.data.RealFeelTemperature.Minimum.Value) + '°' + props.data.RealFeelTemperature.Minimum.Unit}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

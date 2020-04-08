@@ -1,45 +1,60 @@
 .sidebar {
-    position: fixed;
-    right: -500px;
-    top: 0;
-    width: 450px;
-    height: 100vh;
-    background-color: rgba(255,255,255, 0.9);
-    padding: 70px 0 0 0;
-    transition: all 0.5s;
+    width: 88%;
+    margin: 20px auto 30px auto;
+    background-color: rgba(90, 136, 199, 0.9);
     z-index: 10;
-    box-shadow: -1px 0 15px rgba(0,0,0,0.4);
-    overflow: auto;
+    box-shadow: 0 0 10px -2px rgba(0,0,0,0.3);
     transition: all 0.3s;
+    padding: 20px 30px;
+    border-radius: 3px;
+    position: relative;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: slideLeft 0.5s forwards;
+    overflow: hidden;
 }
 .sidebar p {
     margin: 0;
 }
 
+.sidebar .flex  {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
 .sidebar.open {
-    right: 0;
+    animation: slideRight 0.5s forwards;
 }
 
 .sidebar .closeBtn {
     position: absolute;
-    left: 20px;
-    top: 10px;
-    font-size: 24px;
-    line-height: 1;
-    color: #333333;
+    right: 7px;
+    top: 7px;
+    color: #FFFFFF;
     cursor: pointer;
 }
 
 .sidebar .dayForecast, .sidebar .nightForecast {
-    padding: 20px 30px 30px 50px;
-    min-height: 30vh;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar .label {
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 3px;
+    color: #000000;
 }
 
 .sidebar .dayForecast {
-    background: url('../../assets/images/clear\ sky.jpg') center/cover no-repeat;
+    border-right: 1px solid rgba(255,255,255,0.5);
+    padding-right: 30px;
 }
 .sidebar .nightForecast {
-    background: url('../../assets/images/star\ sky.jpg') center/cover no-repeat;
+    padding-left: 30px;
 }
 .sidebar .dayForecast .imgBg, .sidebar .nightForecast .imgBg {
     min-height: 50px;
@@ -50,11 +65,10 @@
 
 .sidebar .dayForecast .imgBg img, 
 .sidebar .nightForecast .imgBg img {
-    width: 120px;
-    filter: drop-shadow(0 0 3px rgba(0,0,0,0.3));
+    width: 80px;
 }
 
-.sidebar .date {
+/* .sidebar .date {
     padding: 0 30px 0 50px;
     font-size: 24px;
     font-weight: 600;
@@ -62,41 +76,112 @@
     line-height: 30px;
     margin-bottom: 30px;
     text-align: right;
-}
+} */
 
 .sidebar .info {
-    text-align: right;
+    text-align: center;
 }
-
+.sidebar .flex.info {
+    align-items: center;
+}
 .sidebar .info .temp {
-    font-size: 32px;
-    color: rebeccapurple;
-    font-weight: 600;
+    font-size: 16px;
     line-height: 25px;
-    margin: 30px 0;
+    margin: 0 10px;
+    color: #FFFFFF;
 }
 
 .sidebar .info .precip,
-.sidebar .info .phrase,
+.sidebar .phrase,
 .sidebar .info .wind {
-    font-size: 22px;
+    font-size: 14px;
     line-height: 25px;
-    color: #333333;
+    color: #FFFFFF;
+    margin: 0 10px;
+}
+
+.sidebar .phrase {
     font-weight: 500;
-    margin-bottom: 20px;
-}
-
-.sidebar .info .wind {
-    margin-bottom: 0;
-    font-size: 18px;
-}
-
-.sidebar .info .phrase {
-    font-size: 20px;
+    margin: 0 0 15px 0;
+    text-align: center;
+    color: #FFFFFF;
 }
 
 .sidebar .nightForecast .info .precip,
 .sidebar .nightForecast .info .phrase,
 .sidebar .nightForecast .info .wind {
     color: #FFFFFF;
+}
+
+@media screen and (max-width: 1024px) {
+    .sidebar .info.flex {
+        flex-direction: column;
+    }
+    .sidebar .dayForecast .info.flex {
+        flex-direction: column-reverse;
+    }
+    .sidebar .info.flex > div:not(.imgBg) {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .sidebar .info .wind, .sidebar .info .precip, .sidebar .info .temp  {
+        font-size: 12px;
+    }
+    .sidebar .dayForecast .imgBg img, 
+    .sidebar .nightForecast .imgBg img {
+        width: 90px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .sidebar .flex {
+        flex-direction: column;
+    }
+    .sidebar .dayForecast, .sidebar .nightForecast {
+        width: 100%;
+    }
+    .sidebar .dayForecast {
+        border: none;
+        border-bottom: 1px solid rgba(255,255,255,0.5);
+        padding: 0 0 20px 0;
+    }
+    .sidebar .nightForecast {
+        padding: 20px 0 0 0;
+    }
+}
+
+@keyframes slideRight {
+    0% {
+        height: 0;
+        padding: 0;
+        transform: scaleX(0);
+    }
+    10% {
+        height: auto;
+        padding: 20px 30px;
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        height: auto;
+        padding: 20px 30px;
+        transform: scaleX(1);
+    }
+    90% {
+        height: auto;
+        padding: 20px 30px;
+        transform: scaleX(0);
+    }
+    100% {
+        height: 0;
+        padding: 0;
+        transform: scaleX(0);
+    }
 }

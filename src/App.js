@@ -2,9 +2,13 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import Footer from './components/UI/Footer';
-import Header from './components/UI/Header';
 import FiveDayForecast from './containers/FiveDayForecast';
-import HourlyForecast from './containers/HourlyForecast';
+import Header from './components/UI/Header';
+import lazyLoader from './hoc/lazyLoader';
+
+const asyncHourlyForecast = lazyLoader(() => {
+    return import('./containers/HourlyForecast')
+});
 
 class App extends Component {
     render() {
@@ -13,7 +17,7 @@ class App extends Component {
                 <Header />
                 <div className="content">
                     <Switch>
-                        <Route exact path="/hourly-forecast" component={HourlyForecast}/>
+                        <Route exact path="/hourly-forecast" component={asyncHourlyForecast}/>
                         <Route exact path="/" component={FiveDayForecast}/>
                     </Switch>
                 </div>
