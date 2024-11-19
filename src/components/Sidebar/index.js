@@ -1,5 +1,5 @@
 import React from 'react';
-import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+// import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 import './style.css';
 
@@ -11,7 +11,7 @@ const Sidebar = props => {
             {/* <div>
                 <p className="date">{formattedDate}</p>
             </div> */}
-            <span className="closeBtn" onClick={props.sidebarClosed}><ArrowBackIcon fontSize="small"/></span>    
+            <span className="closeBtn" onClick={props.sidebarClosed}>{'<'}</span>
             <div className='flex'>
                 <div className="dayForecast">
                     <p className="phrase">{props.data.Day.LongPhrase}</p>

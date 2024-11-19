@@ -3,7 +3,7 @@ import React from 'react';
 import Autocomplete, { createFilterOptions } from '@material-ui/lab/Autocomplete';
 import TextField from '@material-ui/core/TextField';
 import { topCities }  from '../../service/topCities';
-import SearchIcon from '@material-ui/icons/Search';
+// import SearchIcon from '@material-ui/icons/Search';
 
 import './style.css';
 
@@ -60,7 +60,7 @@ const CityInput = props => {
                     renderInput={(params) => textField(params)}
                     // open
                 />
-                <button className="submitBtn"><SearchIcon fontSize="large"/></button>
+                <button className="submitBtn">o</button>
             </form>
         </section>
     )

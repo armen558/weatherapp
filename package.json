@@ -3,21 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^4.9.5",
-    "@material-ui/icons": "^4.9.1",
-    "@material-ui/lab": "^4.0.0-alpha.47",
-    "axios": "^0.19.2",
-    "material-design-icons": "^3.0.1",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "@material-ui/core": "^4.12.4",
+    "@material-ui/lab": "^4.0.0-alpha.61",
+    "axios": "^1.7.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-redux": "^6.0.1",
-    "react-router": "^5.0.0",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "^2.1.8",
+    "react-router": "^5.3.4",
+    "react-router-dom": "^5.3.4",
+    "react-scripts": "^5.0.1",
     "react-slick": "^0.25.2",
-    "redux": "^4.0.1",
-    "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.3.0",
+    "redux": "^4.2.1",
+    "redux-thunk": "^2.4.2",
     "slick-carousel": "^1.8.1"
   },
   "scripts": {
@@ -38,14 +35,6 @@
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
   "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/armen558/weatherapp.git"
-  },
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/armen558/weatherapp/issues"
-  },
-  "homepage": "https://github.com/armen558/weatherapp#readme"
+  "license": "ISC"
 }
